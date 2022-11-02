@@ -1,9 +1,13 @@
 import io
 import requests
-import fashion_mnist_dense as model
+import model
 import streamlit as st
 import numpy as np
 from PIL import Image
+
+@st.cache(allow_output_mutation=True)
+def load_model():
+    return model.model()
 
 #создаем функцию загрузки файла
 def preprocess_image(img):
@@ -22,7 +26,9 @@ def load_image():
         return Image.open(io.BytesIO(image_data))
     else:
         return None
-
+    
+model = load_model()
+    
 def print_predictions(preds):
     classes = decode_predictions(preds, top=3)[0]
     for cl in classes:
