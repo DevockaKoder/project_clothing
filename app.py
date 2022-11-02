@@ -1,4 +1,5 @@
 import io
+import requests
 import fashion_mnist_dense as model
 import streamlit as st
 import numpy as np
