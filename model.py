@@ -11,7 +11,7 @@ from PIL import Image
 
 (x_train, y_train), (x_test, y_test) = fashion_mnist.load_data()
 
-classes = ['ôóòáîëêà', 'áðþêè', 'ñâèòåð', 'ïëàòüå', 'ïàëüòî', 'òóôëè', 'ðóáàøêà', 'êðîññîâêè', 'ñóìêà', 'áîòèíêè']
+classes = ['футболка', 'брюки', 'свитер', 'платье', 'пальто', 'туфли', 'рубашка', 'кроссовки', 'сумка', 'ботинки']
 
 plt.figure(figsize=(10,10))
 for i in range(100,150):
@@ -25,8 +25,7 @@ for i in range(100,150):
 x_train = x_train.reshape(60000, 784)
 x_test = x_test.reshape(10000, 784)
 
-# Âåêòîðèçîâàííûå îïåðàöèè
-# Ïðèìåíÿþòñÿ ê êàæäîìó ýëåìåíòó ìàññèâà îòäåëüíî
+
 x_train = x_train / 255 
 x_test = x_test / 255 
 
