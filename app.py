@@ -9,6 +9,16 @@ import requests
 import streamlit as st
 import numpy as np
 from PIL import Image
+from fastapi import FastAPI
+
+
+app = FastAPI()
+
+
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
+
 
 (x_train, y_train), (x_test, y_test) = fashion_mnist.load_data()
 x_train = x_train.reshape(60000, 784)
